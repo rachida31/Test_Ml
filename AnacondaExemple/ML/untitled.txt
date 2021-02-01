@@ -1,0 +1,111 @@
+-----Record_ID : l'identifiant d'un enregistrement
+-----Auction_ID :identifiant d'une enchère.
+-----Enchérisseur_ID :l'identifiant d'un  soumissionnaire
+********Enchérisseur_Tendency :le soumissionnaire au lieu de participer a des grands encheres il participe a un petit nombre c'est un actes collusoire impliquant le vendeur frauduleux et un complice.
+######Bidding_Ratio :un soumissionnaire participe plus fréquemment pour augmenter le prix de l'enchère et attirer des offres plus élevées de la part de participants légitimes.
+Successive_Outbidding : le meme enchérisseur se surenchère successivement même s'il est le gagnant actuel pour augmenter le #####prix progressivement avec de petits incréments consécutifs.
+=====Last_Bidding :un enchérisseur devient inactif à la dernière étape de l'enchère (apreés plus de 90 \% de la durée de l'enchère) pour éviter de gagner l'enchère.
+&&&&&&&Auction_Bids :les enchères avec activités SB ont tendance à avoir un nombre d'enchères beaucoup plus élevé que la moyenne des des enchères lors d'enchères simultanées.
+*******=====++++++Starting_Price_Average :enchérisseur propose généralement un petit prix de départ pour attirer des enchérisseurs légitimes dans l'enchère.
+=====Early_Bidding :un enchérisseur a tendance à enchérir assez tôt dans l'enchère (moins de 25 \% de la durée de l'enchère) pour attirer l'attention des utilisateurs d'enchères.
+*******=====++++++Winning_Ratio :un enchérisseur participe à de nombreuses enchères mais ne remporte pratiquement aucune vente aux enchères
+=======Auction_Duration :la durée d'une enchère.
+Classe : 0 pour les enchères non frauder, 1 pour pour les enchères frauder.
+
+
+
+checklist de base :
+
+
+
+analyse de forme:
+-variable target:Class
+-lignes et colonnes:(6321, 13)
+-types de variables:quantitative 8 , qualitative:5
+Record_ID                   int64
+Auction_ID                  int64
+Bidder_ID                  object
+Bidder_Tendency           float64
+Bidding_Ratio             float64
+Successive_Outbidding     float64
+Last_Bidding              float64
+Auction_Bids              float64
+Starting_Price_Average    float64
+Early_Bidding             float64
+Winning_Ratio             float64
+Auction_Duration            int64
+Class                       int64
+dtype: object
+****nobre de variable de chaque types****
+float64    8
+int64      4
+object     1
+dtype: int64
+
+
+-analyses des valeurs manquantes:0 NAN
+
+
+Analyse de fond:
+
+-visualisation de la target:
+0    5646 : pour les enchères de comportement normal
+1     675 : non normale.
+Name: Class, dtype: int64
+
+
+*****les resultats en porcentage *********
+0    0.893213
+1    0.106787
+Name: Class, dtype: float64
+
+-signification des variables:
+-relation varaibles/target:
+
+Rq: les taux de Bidder_endency ,Bidding_Ratio,Successive_utbidding,Winning_Ratio semplent liés au froude (sont tt de type float)
+-* on peut voir une relation entre les Auction_uration et Successive_Outbidding 'encheres et les calss.
+
+Analyse plus detaillee:
+-variable/variable:variable trés corelere comme (Last_Bidding,Early_Bidding) aussi (Class,Successive_Outbidding),(Bidding Ratio,Successive_Outbidding),(Winning_Ratio,Bidding_Ratio) correlation :+0.9 (a surveiller plus tard)
+-variable/ariable_uration
+-variable/Successive_Outbidding
+-viral/viral:
+-
+
+
+1. exploration
+• pas d’idée a priori sur les données
+• recherche de régularité (dépendances, groupes homogènes,
+etc.)
+2. modélisation
+• idée précise sur les données
+• construction de modèles prédictifs
+
+
+
+Analyse exploratoire
+
+Objectifs :
+• obtenir une vision globale d’un jeu de données
+• découvrir des formes de régularité
+Moyens :
+• représentations visuelles (et interactives) des données
+• recherche automatique de régularités :
+• corrélation et dépendance entre variables
+• groupes homogènes (classification)
+• schémas fréquents
+
+
+Objectifs :
+• inférer des informations inconnues
+• prédire l’évolution des données
+Moyens :
+• données d’apprentissage :
+• connaître l’évolution d’une grandeur dans le passé pour
+prédire son évolution future (données historiques)
+• connaître une propriété de certains objets (par exemple le
+salaire de certains clients) pour inférer sa valeur pour les
+autres objets
+• méthodes d’apprentissage : construire un modèle à partir
+des données d’apprentissage
+
